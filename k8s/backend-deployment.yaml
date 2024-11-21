@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: ghcr.io/notyusheng/transcribe-translate-backend:latest
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: whisper-models
+          mountPath: /app/whisper_models
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      volumes:
+      - name: whisper-models
+        emptyDir: {}
