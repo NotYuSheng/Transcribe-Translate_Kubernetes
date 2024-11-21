@@ -22,8 +22,20 @@ This version relies on Docker images created and managed via GitHub workflows in
 
 
 ## Getting Started
-1. Install kubectl and Minikube for local Kubernetes deployment.
-- Kubernetes Installation Guide
+The following instructions are for Ubuntu
+1. Install kubectl 
+```
+sudo apt install -y curl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version --client
+```
+2. Install Minikube
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube version
+```
 
 ## Deployment Steps
 1. Clone and navigate to folder
@@ -32,14 +44,55 @@ git clone https://github.com/NotYuSheng/Transcribe-Translate_Kubernetes.git
 cd Transcribe-Translate
 ```
 
-2. Apply Kubernetes Manifests
+2. Start Minikube
+Set up a single-node Kubernetes cluster
+```
+minikube start --driver=docker
+```
+
+3. Verify that the cluster is running
+```
+kubectl get nodes
+```
+
+4. Apply Kubernetes Manifests
 Deploy the app using the Kubernetes manifests in the k8s/ directory:
 ```
 kubectl apply -f k8s/
 ```
 
-3. Access the Application
+5. Check Deployments and Services
+- View Pods to check the containers are running
+```
+kubectl get pods
+```
+- Check services (to see exposed ports):
+
+```
+kubectl get services
+```
+
+6. Access the Application
 Use Minikube to access the Nginx service:
 ```
 minikube service nginx
+```
+
+## Useful Commands
+1. View logs
+```
+kubectl logs <pod-name>
+```
+
+2. Restart Pods
+```
+kubectl delete pod <pod-name>
+```
+
+3. Delete Resources
+```
+kubectl delete -f backend-deployment.yaml
+kubectl delete -f frontend-deployment.yaml
+kubectl delete -f nginx-deployment.yaml
+kubectl delete -f nginx-service.yaml
 ```
