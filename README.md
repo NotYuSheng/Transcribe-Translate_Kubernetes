@@ -1,8 +1,10 @@
 # Transcribe Translate (Kubernetes Version)
 This is the **Kubernetes version** of the Transcribe Translate project, a web application for transcription and translation services. It uses pre-built Docker images managed by workflows in the [original repository](https://github.com/NotYuSheng/Transcribe-Translate).
 
+<a href="#"><img alt="last-commit" src="https://img.shields.io/github/last-commit/NotYuSheng/Transcribe-Translate_Kubernetes?color=red"></a>
+
 > [!WARNING]  
-> This project is still a work in progress
+> This project is incomplete and still a work in progress
 
 ## Features
 - **Accurate Transcriptions**: Powered by Whisper models for high-quality audio transcription.
