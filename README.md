@@ -41,7 +41,7 @@ minikube version
 1. Clone and navigate to folder
 ```
 git clone https://github.com/NotYuSheng/Transcribe-Translate_Kubernetes.git
-cd Transcribe-Translate
+cd Transcribe-Translate_Kubernetes
 ```
 
 2. Start Minikube
