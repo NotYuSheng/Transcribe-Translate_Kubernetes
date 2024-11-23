@@ -12,14 +12,14 @@ This is the **Kubernetes version** of the Transcribe Translate project, a web ap
 - **Kubernetes-Optimized Architecture**: Designed for deployment on Kubernetes clusters, offering scalability and resource management.
 
 ## Docker Images
-This version relies on Docker images created and managed via GitHub workflows in the original repository:
+This version relies on the CUDA version of the Docker images created and managed via GitHub workflows in the original repository. To access the CPU version, switch to `backend-deployment.cpu.yaml`.
 
-| Component | Image URL                                                 |
-| --------- | --------------------------------------------------------- |
-| Backend   | `ghcr.io/notyusheng/transcribe-translate-backend:latest`  |
-| Frontend  | `ghcr.io/notyusheng/transcribe-translate-frontend:latest` |
-| Nginx     | `ghcr.io/notyusheng/transcribe-translate-nginx:latest`    |
-
+| Component      | Image URL                                                 |
+| -------------- | --------------------------------------------------------- |
+| Backend CPU    | `ghcr.io/notyusheng/transcribe-translate-backend:cpu`     |
+| Backend CUDA   | `ghcr.io/notyusheng/transcribe-translate-backend:cuda`    |
+| Frontend       | `ghcr.io/notyusheng/transcribe-translate-frontend:latest` |
+| Nginx          | `ghcr.io/notyusheng/transcribe-translate-nginx:latest`    |
 
 ## Getting Started
 The following instructions are for Ubuntu
