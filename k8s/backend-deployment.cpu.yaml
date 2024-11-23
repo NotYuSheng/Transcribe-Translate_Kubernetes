@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ghcr.io/notyusheng/transcribe-translate-backend:latest
+        image: ghcr.io/notyusheng/transcribe-translate-backend:cpu
         ports:
         - containerPort: 5000
         volumeMounts:
