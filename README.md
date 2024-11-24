@@ -85,14 +85,3 @@ Use Minikube to access the Nginx service:
 ```
 minikube service nginx
 ```
-
-## Useful Commands
-1. View logs
-```
-kubectl logs <pod-name>
-```
-
-2. Restart Pods
-```
-kubectl delete pod <pod-name>
-```
