@@ -59,6 +59,7 @@ kubectl get nodes
 Deploy the app using the Kubernetes manifests in the k8s/ directory:
 ```
 kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/coredns.yaml
 kubectl apply -f k8s/backend-deployment.cuda.yaml
 kubectl apply -f k8s/backend-service.yaml
 kubectl apply -f k8s/frontend-deployment.yaml
