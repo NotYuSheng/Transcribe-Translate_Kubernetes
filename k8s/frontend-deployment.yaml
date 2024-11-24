@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: transcribe-translate-frontend
   labels:
-    app: frontend
+    app: transcribe-translate-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: transcribe-translate-frontend
   template:
     metadata:
       labels:
-        app: frontend
+        app: transcribe-translate-frontend
     spec:
       containers:
-      - name: frontend
+      - name: transcribe-translate-frontend
         image: ghcr.io/notyusheng/transcribe-translate-frontend:latest
         ports:
         - containerPort: 3000
