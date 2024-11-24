@@ -72,12 +72,12 @@ kubectl apply -f k8s/nginx-service.yaml
 5. Check Deployments and Services
 - View Pods to check the containers are running
 ```
-kubectl get pods
+kubectl get pods -n transcribe-translate
 ```
 - Check services (to see exposed ports):
 
 ```
-kubectl get services
+kubectl get services -n transcribe-translate
 ```
 
 6. Access the Application
