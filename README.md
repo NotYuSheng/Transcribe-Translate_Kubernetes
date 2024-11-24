@@ -58,12 +58,13 @@ kubectl get nodes
 4. Apply Kubernetes Manifests
 Deploy the app using the Kubernetes manifests in the k8s/ directory:
 ```
-kubectl apply -f k8s/
-
-
-
-
+kubectl apply -f k8s/backend-deployment.cuda.yaml
+kubectl apply -f k8s/frontend-deployment.yaml
+kubectl apply -f k8s/nginx-deployment.yaml
+kubectl apply -f k8s/nginx-service.yaml
 ```
+> [!NOTE]
+> Switch between the backend `cuda` and `cpu` version accordingly.
 
 5. Check Deployments and Services
 - View Pods to check the containers are running
