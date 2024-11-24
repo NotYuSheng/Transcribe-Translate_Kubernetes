@@ -59,6 +59,7 @@ kubectl get nodes
 Deploy the app using the Kubernetes manifests in the k8s/ directory:
 ```
 kubectl apply -f k8s/backend-deployment.cuda.yaml
+kubectl apply -f k8s/backend-service.yaml
 kubectl apply -f k8s/frontend-deployment.yaml
 kubectl apply -f k8s/nginx-deployment.yaml
 kubectl apply -f k8s/nginx-service.yaml
@@ -92,12 +93,4 @@ kubectl logs <pod-name>
 2. Restart Pods
 ```
 kubectl delete pod <pod-name>
-```
-
-3. Delete Resources
-```
-kubectl delete -f backend-deployment.yaml
-kubectl delete -f frontend-deployment.yaml
-kubectl delete -f nginx-deployment.yaml
-kubectl delete -f nginx-service.yaml
 ```
