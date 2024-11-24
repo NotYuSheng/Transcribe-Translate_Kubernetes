@@ -4,7 +4,7 @@ metadata:
   name: transcribe-translate-backend
 spec:
   selector:
-    app: backend
+    app: transcribe-translate-backend
   ports:
     - protocol: TCP
       port: 8000
