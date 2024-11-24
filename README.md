@@ -12,7 +12,7 @@ This is the **Kubernetes version** of the Transcribe Translate project, a web ap
 - **Kubernetes-Optimized Architecture**: Designed for deployment on Kubernetes clusters, offering scalability and resource management.
 
 ## Docker Images
-This version relies on the CUDA version of the Docker images created and managed via GitHub workflows in the original repository. To access the CPU version, switch to `backend-deployment.cpu.yaml`.
+This version relies on the Docker images created and managed via GitHub workflows in the original repository. Switch between the `backend-deployment.cpu.yaml` and `backend-deployment.cuda.yaml` accordingly.
 
 | Component      | Image URL                                                 |
 | -------------- | --------------------------------------------------------- |
@@ -59,6 +59,10 @@ kubectl get nodes
 Deploy the app using the Kubernetes manifests in the k8s/ directory:
 ```
 kubectl apply -f k8s/
+
+
+
+
 ```
 
 5. Check Deployments and Services
