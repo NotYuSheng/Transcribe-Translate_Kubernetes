@@ -18,7 +18,7 @@ spec:
       - name: backend
         image: ghcr.io/notyusheng/transcribe-translate-backend:cuda
         ports:
-        - containerPort: 5000
+        - containerPort: 8000
         volumeMounts:
         - name: whisper-models
           mountPath: /app/whisper_models
