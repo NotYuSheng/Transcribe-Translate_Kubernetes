@@ -61,6 +61,7 @@ Deploy the app using the Kubernetes manifests in the k8s/ directory:
 kubectl apply -f k8s/backend-deployment.cuda.yaml
 kubectl apply -f k8s/backend-service.yaml
 kubectl apply -f k8s/frontend-deployment.yaml
+kubectl apply -f k8s/frontend-service.yaml
 kubectl apply -f k8s/nginx-deployment.yaml
 kubectl apply -f k8s/nginx-service.yaml
 ```
