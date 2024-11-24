@@ -59,12 +59,9 @@ kubectl get nodes
 Deploy the app using the Kubernetes manifests in the k8s/ directory:
 ```
 kubectl apply -f k8s/namespace.yaml
-kubectl apply -f k8s/coredns.yaml
-kubectl apply -f k8s/backend-deployment.cpu.yaml
-kubectl apply -f k8s/backend-service.yaml
-kubectl apply -f k8s/frontend-deployment.yaml
-kubectl apply -f k8s/frontend-service.yaml
-kubectl apply -f k8s/nginx-deployment.yaml
+kubectl apply -f k8s/backend.yaml
+kubectl apply -f k8s/frontend.yaml
+kubectl apply -f k8s/nginx.yaml
 ```
 > [!NOTE]
 > Switch between the backend `cuda` and `cpu` version accordingly.
