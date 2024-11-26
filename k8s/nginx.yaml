@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: transcribe-translate
+spec:
+  replicas: 1                          # Deploy 1 replica of the nginx pod.
+  selector:
+    matchLabels:
+      app: nginx                       # Selector to match the Service with this Deployment.
+  template:
+    metadata:
+      labels:
+        app: nginx                     # Labels applied to the Pods for selection by the Service.
+    spec:
+      containers:
+        - name: nginx
+          image: ghcr.io/notyusheng/transcribe-translate-nginx:latest
+          ports:
+            - containerPort: 8000      # The port where nginx listens inside the container.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: transcribe-translate
+spec:
+  type: NodePort                       # Exposes the Service externally via a NodePort.
+  selector:
+    app: nginx                         # Connect this Service to Pods with the label `app: nginx`.
+  ports:
+    - name: service-port               # Label to identify this port.
+      protocol: TCP                    # Protocol used (TCP).
+      port: 8000                       # Internal ClusterIP port for communication.
+      targetPort: 8000                 # Forward traffic to this port on the nginx container.
+      nodePort: 8000                   # External port exposed on the node (host network).
